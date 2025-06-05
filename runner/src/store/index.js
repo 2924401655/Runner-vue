@@ -23,7 +23,7 @@ const store = new Vuex.Store({
             state.isAuthenticated = true;
             state.user = user
         },
-        loginout(state){
+        setLoginOut(state){
             state.isAuthenticated = false;
             state.user = ''
         }

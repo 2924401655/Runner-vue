@@ -80,6 +80,7 @@ export default {
 <style  scoped>
 .containr {
   background-color: rgb(249,249,249);
+  padding-bottom: 30px;
 }
 
 .clearfix::after {

@@ -3,10 +3,10 @@
   <div class="container">
     <el-carousel height="130px">
       <el-carousel-item v-for="item in 1" :key="item">
-        <img src="../assets/runner1.png" alt="" height="100%" width="100%">
+        <img class='carousel' src="../assets/runner1.png" alt="" height="100%" width="100%">
       </el-carousel-item>
       <el-carousel-item>
-        <img src="../assets/logo1.png" alt="" height="100%" width="100%">
+        <img class="carousel" src="../assets/logo1.png" alt="" height="100%" width="100%">
       </el-carousel-item>
     </el-carousel>
    <!--数据统计-->
@@ -128,7 +128,11 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$router.currentRoute.path)
+    // console.log(this.$router.currentRoute.path)
+    // 判断登录
+    if(!sessionStorage.getItem('token')){
+
+    }
   },
   computed:{
     countOrder(){
@@ -213,6 +217,9 @@ export default {
   }
   .service {
     background-color: #fff;
+  }
+  .carousel {
+    object-fit: cover ;
   }
 
 </style>

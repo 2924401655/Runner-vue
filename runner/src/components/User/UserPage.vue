@@ -23,6 +23,8 @@
         <el-row>
           <router-link to="/user/order" class="router-link"><el-col :span="24"><div class="item "><span class="text"><i class="el-icon-coin order "></i>我的订单</span><i class="el-icon-arrow-right rightarrow"></i></div></el-col></router-link>
           <el-col :span="24"><div class="item"><span class="text"><i class="el-icon-folder-opened service"></i>邀请新人</span><i class="el-icon-arrow-right rightarrow"></i></div></el-col>
+          <el-col :span="24"><div class="item"><span class="text"><i class="el-icon-folder-opened service"></i>我的优惠券</span><i class="el-icon-arrow-right rightarrow"></i></div></el-col>
+
         </el-row>
         <el-row>
         <el-col :span="24" ><div class="item " @click="kf()"><span class="text"><i class="el-icon-chat-dot-round service"></i>校区客服</span><i class="el-icon-arrow-right rightarrow"></i></div></el-col>
@@ -89,14 +91,14 @@ export default {
 
     },
     islogin(){
-      let username = publicTools.Cookie.get('username')
-      let sessionid = publicTools.Cookie.get('sessionid')
-      if(!username && !sessionid) {
-        this.$router.push({name:'login'})
-        
-      } else {
-        // this.$router.push({name:'user'})
-      }
+      // let username = publicTools.Cookie.get('username')
+      // let sessionid = publicTools.Cookie.get('sessionid')
+      // if(!username && !sessionid) {
+      //   this.$router.push({name:'login'})
+      //
+      // } else {
+      //   // this.$router.push({name:'user'})
+      // }
 
   },
   async kf(){
@@ -144,7 +146,7 @@ mounted() {
   box-sizing: border-box;
 }
 .head{
-  width: calc(100%+10px);
+  width: calc(100%+ 10px);
   height: 120px;
   background-image: linear-gradient(to right, #78b7f8, #458cf5);
   padding: 5px;

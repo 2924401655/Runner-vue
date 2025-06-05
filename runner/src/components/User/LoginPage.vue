@@ -31,8 +31,7 @@
 </template>
 
  <script >
-// import api from '@/api/api.js
-// import store from '@/store/index.js'
+
 import axios from 'axios'
 import { publicTools } from '../tools/publicTools';
 export default {
@@ -73,9 +72,15 @@ export default {
             console.log(res.data)
             console.log('login successful')
             let data = res.data
-            localStorage.setItem('avatar', data.faceimg)
-            localStorage.setItem('name',data.nickname)
-            localStorage.setItem('location',data.location)
+            if(data.code === 0){
+              sessionStorage.setItem('token',data)
+            } else {
+              if(data.code === 40400){
+                router.push({
+                  name:'binduser'
+                })
+              }
+            }
             // store.commit('setLoginStatus',data)
             publicTools.Cookie.set('username', data.nickname,7)
             publicTools.Cookie.set('sessionid', 'sessionid',7)

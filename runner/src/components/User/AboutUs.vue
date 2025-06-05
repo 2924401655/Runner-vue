@@ -9,6 +9,7 @@
     </div>
     <div class="content">
       对本程序中的疏漏之处,望不吝赐教
+
     </div>
   </div>
 </template>
@@ -26,11 +27,14 @@ export default {
   box-sizing: border-box;
 }
 .about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 
 }
 .content {
-  width: 100%;
+
   height: auto;
   padding: 20px;
   box-shadow:

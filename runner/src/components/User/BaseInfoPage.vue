@@ -83,6 +83,7 @@ export default {
     }
     },
     methods:{
+
         notification(){
             const h = this.$createElement;
             this.$notify({

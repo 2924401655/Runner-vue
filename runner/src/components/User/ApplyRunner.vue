@@ -22,7 +22,7 @@
     </el-table-column>
   </el-table>
   <center>
-  <el-button type="primary" round @click="dialog = true">下一步</el-button>
+  <el-button class="next_btn" type="primary" round @click="dialog = true">下一步</el-button>
 </center>
 <el-dialog title="申请表" :visible.sync="dialog" width="100%">
   <el-form :model="form" :rules="rule">
@@ -124,5 +124,7 @@ export default {
 </script>
 
 <style>
-
+.next_btn {
+  margin-top: 30px;
+}
 </style>

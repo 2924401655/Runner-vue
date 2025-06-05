@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store/index.js'
-
+import NProgress from 'nprogress'
 
 Vue.use(Router)
 
@@ -29,12 +29,6 @@ const router = new Router({
       name: 'user',
       component: () => import('../components/User/UserPage.vue'),
       beforeEnter: (to, from, next) => {
-        // const isAuthenticated = store.state.isAuthenticated
-        // if (isAuthenticated) {
-        //   next()
-        // } else {
-        //   next('/user/login')
-        // }
         if(store.state.isAuthenticated){
           next()
         }else{
@@ -144,9 +138,24 @@ const router = new Router({
       path:'/user/bindemail',
       name: 'bindemail',
       component: () => import('@/components/User/bindEmail.vue')
+    },
+    {
+      path:'/user/binduser',
+      name: 'binduser',
+      component: () => import('@/components/User/BindUser.vue')
     }
   ],
   mode: 'history'
+})
+
+router.beforeEach((to,from,next)=>{
+    NProgress.start();
+    next()
+})
+
+router.afterEach(()=>{
+    NProgress.done();
+
 })
 
 export default router

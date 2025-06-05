@@ -4,7 +4,12 @@
   </div>
 </template>
 <script>
+
 export default {
+  
+  mounted:{
+
+  },
   name: 'App',
   components: {
    
